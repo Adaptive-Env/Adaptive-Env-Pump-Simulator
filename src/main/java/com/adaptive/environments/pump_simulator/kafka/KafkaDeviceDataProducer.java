@@ -26,7 +26,7 @@ public class KafkaDeviceDataProducer {
 
         return kafkaSender.send(Flux.just(record))
                 .doOnNext(result -> {
-                    log.info("[Kafka] Successfully sent {}", data);
+                    log.info("[Kafka] Successfully sent {}", data.toString());
                 })
                 .then();
     }

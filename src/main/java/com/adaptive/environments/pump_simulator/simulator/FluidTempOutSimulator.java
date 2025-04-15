@@ -12,7 +12,6 @@ import java.util.Map;
 import java.util.Random;
 
 @Component
-@Profile("simulator")
 public class FluidTempOutSimulator implements Simulator {
 
     private final KafkaDeviceDataProducer kafkaProducerService;

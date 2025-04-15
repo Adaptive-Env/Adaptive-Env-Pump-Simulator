@@ -16,4 +16,17 @@ public class DeviceData {
     private Long timestamp;
     private String authKey;
     private Map<String, Object> data;
+
+    @Override
+    public String toString() {
+        return "DeviceData{" +
+                "deviceId='" + deviceId + '\'' +
+                ", sensorId='" + sensorId + '\'' +
+                ", location='" + location + '\'' +
+                ", type='" + type + '\'' +
+                ", timestamp=" + timestamp +
+                ", authKey='" + authKey + '\'' +
+                ", data=" + data +
+                '}';
+    }
 }

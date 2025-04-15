@@ -9,7 +9,6 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-@Profile("simulator")
 public class PumpDataSimulatorService {
 
     private final PumpSimulatorProperties properties;
@@ -29,6 +28,15 @@ public class PumpDataSimulatorService {
             }
         }
     }
+    @PostConstruct
+    private void keepAlive() {
+        try {
+            Thread.currentThread().join();
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
+    }
+
 
     private boolean isEnabled(Simulator simulator) {
         return (simulator instanceof RpmSimulator && properties.isRpm()) ||

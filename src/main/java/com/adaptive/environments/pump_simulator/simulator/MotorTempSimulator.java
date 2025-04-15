@@ -12,7 +12,6 @@ import java.util.Map;
 import java.util.Random;
 
 @Component
-@Profile("simulator")
 public class MotorTempSimulator implements Simulator {
 
     private final KafkaDeviceDataProducer kafkaProducerService;
