@@ -20,7 +20,6 @@ public class KafkaDeviceDataProducer {
         this.kafkaSender = kafkaSender;
     }
 
-
     public Mono<Void> send(String topic, DeviceData data) {
         ProducerRecord<String, DeviceData> producerRecord = new ProducerRecord<>(topic, data.getDeviceId(), data);
         SenderRecord<String, DeviceData, String> record = SenderRecord.create(producerRecord, null);
