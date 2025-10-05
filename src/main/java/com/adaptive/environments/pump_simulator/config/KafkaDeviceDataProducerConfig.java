@@ -28,5 +28,6 @@ public class KafkaDeviceDataProducerConfig {
 
         SenderOptions<String, DeviceData> options = SenderOptions.create(props);
         return KafkaSender.create(options);
+
     }
 }
